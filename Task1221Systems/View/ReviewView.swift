@@ -1,18 +1,18 @@
 //
-//  ReviewsView.swift
+//  ReviewView.swift
 //  Task1221Systems
 //
-//  Created by Konstantin on 02.02.2024.
+//  Created by Konstantin on 04.02.2024.
 //
 
 import SwiftUI
 
-struct ReviewsView: View {
+struct ReviewView: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
 #Preview {
-    ReviewsView()
+    ReviewView()
 }
