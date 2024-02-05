@@ -12,10 +12,7 @@ struct MainView: View {
     @State private var isProductViewShow = false
     
     var body: some View {
-//        NavigationView {
-            ZStack {
-                Color(.white)
-                    .ignoresSafeArea()
+            VStack {
                 
                 NavigationLink {
                     ProductView()

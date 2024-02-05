@@ -14,15 +14,12 @@ struct ReviewView: View {
     var body: some View {
         
         ScrollView(.vertical) {
-//            HStack {
                 ForEach(reviewArray, id: \.id) { item in
                     ReviewCell(review: item)
-//                        .frame(width: ., height: .infinity)
                         .onTapGesture {
                             withAnimation {
                                 print("Need to open full review")
                             }
-//                        }
                 }
                     Spacer()
             }

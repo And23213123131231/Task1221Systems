@@ -22,7 +22,7 @@ struct AddToCartSectionView: View {
     var body: some View {
         VStack {
             HStack {
-                RoundedRectangle(cornerRadius: 0)
+                RoundedRectangle(cornerRadius: 5)
                     .foregroundColor(whatIsSelected == "pices" ? .white : .gray)
                     .frame(height: 20)
                     .overlay(Text("Шт")
@@ -36,7 +36,7 @@ struct AddToCartSectionView: View {
                         }
                     }
                 
-                RoundedRectangle(cornerRadius: 0)
+                RoundedRectangle(cornerRadius: 5)
                     .foregroundColor(whatIsSelected == "kilograms" ? .white : .gray)
                     .frame(height: 20)
                     .overlay(Text("Кг")
@@ -52,9 +52,12 @@ struct AddToCartSectionView: View {
                     }
             }
             .overlay(
-                RoundedRectangle(cornerRadius: 0)
+                RoundedRectangle(cornerRadius: 5)
                     .stroke(Color.gray, lineWidth: 2)
             )}
+        .background(Color.gray)
+        .cornerRadius(5)
+                
         
         HStack {
             VStack(alignment: .leading, content: {

@@ -35,10 +35,6 @@ struct ReviewCell: View {
         .background(Color.white)
         .cornerRadius(10)
         .shadow(radius: 5)
-
-        
-        
-        
     }
 }
 

@@ -12,7 +12,7 @@ struct ProductData {
     let id = "1"
     let title = "1221 systems"
     let image = "logo"
-    let discountPercent = 0
+    let discountPercent = 7
     let ratingImageURL = "Not Found"
     let productionPlace = "Россия, Нижний Новгород"
     let prodictionPlaceFlag = "russianFlag"

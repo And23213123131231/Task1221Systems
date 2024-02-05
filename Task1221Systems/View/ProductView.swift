@@ -14,7 +14,8 @@ struct ProductView: View {
     private var discountedPrice: Double {
         content.priceWithDiscount(discount: content.product.discountPercent)
     }
-            
+                
+    @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         ZStack {
@@ -131,8 +132,12 @@ struct ProductView: View {
                 AddToCartSectionView(discountedPrice: discountedPrice, originalPrice: content.product.price)
             }
         }
-//        .navigationBarBackButtonHidden()
-//        .navigationBarItems
+        .navigationBarBackButtonHidden()
+        .navigationBarItems(leading: Button(action: {
+            self.presentationMode.wrappedValue.dismiss()
+        }, label: {
+            Image(systemName: "arrow.backward")
+        }))
         
         
         .toolbar(content: {
@@ -157,29 +162,6 @@ struct ProductView: View {
                     })
                 }
             }
-            
-            
-            
-//            HStack {
-//                Button(action: {
-//                    print("pressed")
-//                }, label: {
-//                    Image(systemName: "list.bullet.rectangle.portrait")
-//                })
-//                
-//                Button(action: {
-//                    print("pressed")
-//                }, label: {
-//                    Image(systemName: "arrow.up.square")
-//                })
-//                
-//                Button(action: {
-//                    print("pressed")
-//                }, label: {
-//                    Image(systemName: "heart")
-//                })
-//                
-//            }
         })
         .padding(.horizontal)
         
