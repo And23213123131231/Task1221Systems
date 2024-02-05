@@ -11,9 +11,10 @@ struct ProductView: View {
         
     let content = Product()
     
-    var discountedPrice: Double {
+    private var discountedPrice: Double {
         content.priceWithDiscount(discount: content.product.discountPercent)
     }
+            
     
     var body: some View {
         ZStack {
@@ -21,12 +22,14 @@ struct ProductView: View {
                 .ignoresSafeArea()
             ScrollView(.vertical) {
                 HStack {
-                    Text("Цена по карте")
-                        .padding(.all, 3)
-                        .background(Color(.green))
-                        .foregroundColor(.white)
-                        .font(.system(size: 15))
-                        .clipShape(RoundedRectangle(cornerRadius: 5.0))
+                    if content.product.discountPercent > 0 {
+                        Text("Цена по карте")
+                            .padding(.all, 3)
+                            .background(Color(.green))
+                            .foregroundColor(.white)
+                            .font(.system(size: 15))
+                            .clipShape(RoundedRectangle(cornerRadius: 5.0))
+                    }
                     
                     Spacer()
                 }
@@ -34,17 +37,18 @@ struct ProductView: View {
                 Image("logo")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(height: 300, alignment: .center)
+                    .frame(height: 200, alignment: .center)
                 
                 HStack {
                     
-                    Button {
-                        print("reviewButton pressed")
+                    NavigationLink {
+                        ReviewView(reviewArray: content.product.reviewArray)
                     } label: {
                         HStack {
                             Image(systemName: "star.fill")
                                 .foregroundColor(.yellow)
                             Text("\(content.rating())")
+                                .foregroundColor(.black)
                             Text("| \(content.reviewCount()) \(content.wordDeclension())")
                                 .foregroundColor(.gray)
                         }
@@ -52,12 +56,14 @@ struct ProductView: View {
                     
                     Spacer()
                     
-                    Image(systemName: "seal.fill")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .foregroundColor(.red)
-                        .frame(height: 50)
-                        .overlay(Text("-\(content.product.discountPercent)%"))
+                    if content.product.discountPercent > 0 {
+                        Image(systemName: "seal.fill")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .foregroundColor(.red)
+                            .frame(height: 50)
+                            .overlay(Text("-\(content.product.discountPercent)%"))
+                    }
                 }
                 
                 HStack {
@@ -87,19 +93,17 @@ struct ProductView: View {
                 HStack {
                     Text("Описание")
                         .font(.system(size: 20).weight(.bold))
-                        .multilineTextAlignment(.leading)
                     Spacer()
+                    
                 }
                 .padding(.vertical, 10)
                 
                 Text(content.product.description)
                     .font(.system(size: 15))
-                    .multilineTextAlignment(.leading)
                 
                 HStack {
                     Text("Основные характеристики")
                         .font(.system(size: 20).weight(.bold))
-                        .multilineTextAlignment(.leading)
                     Spacer()
                 }
                 .padding(.vertical, 10)
@@ -107,7 +111,7 @@ struct ProductView: View {
                 CharacteristicsView(charactiristics: content.product.mainCharacteristicArray)
                     .padding(.bottom)
                 
-                ReviewsView(count: content.reviewCount(), reviewArray: content.product.reviewArray)
+                ReviewsSectionView(count: content.reviewCount(), reviewArray: content.product.reviewArray)
                 
                 Button {
                     print("writeReview pressed")
@@ -116,7 +120,7 @@ struct ProductView: View {
                         .fill(Color.white)
                         .frame(height: 40)
                         .overlay(Text("Оставить отзыв")
-                            .bold()
+                            .font(.system(size: 20).weight(.bold))
                             .foregroundColor(.green))
                         .overlay(
                             Capsule().stroke(Color.green, lineWidth: 5)
@@ -127,7 +131,59 @@ struct ProductView: View {
                 AddToCartSectionView(discountedPrice: discountedPrice, originalPrice: content.product.price)
             }
         }
+//        .navigationBarBackButtonHidden()
+//        .navigationBarItems
+        
+        
+        .toolbar(content: {
+            ToolbarItem(placement: .topBarTrailing) {
+                HStack {
+                    Button(action: {
+                        print("Toolbar button 1 pressed")
+                    }, label: {
+                        Image(systemName: "list.bullet.rectangle.portrait")
+                    })
+                    
+                    Button(action: {
+                        print("Toolbar button 2 pressed")
+                    }, label: {
+                        Image(systemName: "arrow.up.square")
+                    })
+                    
+                    Button(action: {
+                        print("Toolbar button 3 pressed")
+                    }, label: {
+                        Image(systemName: "heart")
+                    })
+                }
+            }
+            
+            
+            
+//            HStack {
+//                Button(action: {
+//                    print("pressed")
+//                }, label: {
+//                    Image(systemName: "list.bullet.rectangle.portrait")
+//                })
+//                
+//                Button(action: {
+//                    print("pressed")
+//                }, label: {
+//                    Image(systemName: "arrow.up.square")
+//                })
+//                
+//                Button(action: {
+//                    print("pressed")
+//                }, label: {
+//                    Image(systemName: "heart")
+//                })
+//                
+//            }
+        })
         .padding(.horizontal)
+        
+    
         
 
         

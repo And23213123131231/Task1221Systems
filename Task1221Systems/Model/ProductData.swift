@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct productData {
+struct ProductData {
     
     let id = "1"
     let title = "1221 systems"
     let image = "logo"
-    let discountPercent = 5
+    let discountPercent = 0
     let ratingImageURL = "Not Found"
     let productionPlace = "Россия, Нижний Новгород"
     let prodictionPlaceFlag = "russianFlag"

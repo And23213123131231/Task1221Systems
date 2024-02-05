@@ -12,16 +12,24 @@ struct MainView: View {
     @State private var isProductViewShow = false
     
     var body: some View {
-        Button(action: {
-            print("Present ProductView")
-            isProductViewShow.toggle()
-        }, label: {
-            Text("Посмотреть экран товара")
-            
-        })
-        .fullScreenCover(isPresented: $isProductViewShow, content: {
-            ProductView()
-        })
+//        NavigationView {
+            ZStack {
+                Color(.white)
+                    .ignoresSafeArea()
+                
+                NavigationLink {
+                    ProductView()
+                } label: {
+                    VStack {
+                        Image("logo")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(height: 300, alignment: .center)
+                        Text("Посмотреть экран товара")
+                    }
+                }
+                
+        }
     }
 }
 

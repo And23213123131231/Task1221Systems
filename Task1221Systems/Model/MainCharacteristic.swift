@@ -9,10 +9,11 @@ import Foundation
 import SwiftUI
 
 struct MainCharacteristic: Identifiable {
-
+    
     var id: String {
-       return characteristic
+        return characteristic
     }
+
     let characteristic: String
     let value: String
 }

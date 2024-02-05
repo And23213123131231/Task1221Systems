@@ -8,6 +8,7 @@
 import Foundation
 
 struct Review {
+    let id: Int
     let userName: String
     let date: String
     let rating: Int

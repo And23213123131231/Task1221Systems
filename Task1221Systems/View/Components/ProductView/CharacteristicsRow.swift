@@ -14,10 +14,10 @@ struct CharacteristicsRow: View {
     var body: some View {
         HStack {
             Text(charactiristics.characteristic)
-                .multilineTextAlignment(.leading)
+                .font(.system(size: 15))
             Spacer()
             Text(charactiristics.value)
-                .multilineTextAlignment(.trailing)
+                .font(.system(size: 15))
         }
     }
 }

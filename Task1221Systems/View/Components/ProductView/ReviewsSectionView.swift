@@ -19,8 +19,8 @@ struct ReviewsSectionView: View {
 
             Spacer()
             
-            Button {
-                print("showFullReviews pressed")
+            NavigationLink {
+                ReviewView(reviewArray: reviewArray)
             } label: {
                 Text("Все \(count)")
                     .font(.system(size: 20).weight(.bold))
@@ -33,6 +33,7 @@ struct ReviewsSectionView: View {
                 HStack {
                     ForEach(reviewArray, id: \.id) { item in
                         ReviewCell(review: item)
+                            .frame(width: 150, height: 150)
                             .onTapGesture {
                                 withAnimation {
                                     print("Need to open full review")
@@ -47,7 +48,7 @@ struct ReviewsSectionView: View {
 #Preview {
     ReviewsSectionView(count: 3, reviewArray: [
         Review(id: 3, userName: "Петр П.", date: "2 февраля 2024", rating: 5, text: "Замечательная молодая, но быстрорастущая компания."),
-        Review(id: 2, userName: "QA-инженер", date: "1 марта 2023", rating: 5, text: "Замечательная молодая, но быстрорастущая компания."),
+        Review(id: 2, userName: "Юрий Ю.", date: "1 марта 2023", rating: 5, text: "Замечательная молодая, но быстрорастущая компания."),
         Review(id: 1, userName: "Иван И.", date: "9 июня 2022", rating: 4, text: "Замечательная молодая, но быстрорастущая компания.")
     ])
 }

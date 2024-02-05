@@ -12,7 +12,7 @@ struct MainTabBar: View {
     
         TabView {
             
-            Text("Главная")
+            Text("Перейдите в Каталог")
                     .tabItem {
                         VStack {
                             Image(systemName: "arrowshape.up.circle")

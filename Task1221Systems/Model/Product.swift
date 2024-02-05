@@ -9,7 +9,7 @@ import Foundation
 
 struct Product {
     
-    let product = productData()
+    let product = ProductData()
     
     func priceWithDiscount(discount: Int?) -> Double {
         

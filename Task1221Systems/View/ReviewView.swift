@@ -8,11 +8,32 @@
 import SwiftUI
 
 struct ReviewView: View {
+    
+    let reviewArray: [Review]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        ScrollView(.vertical) {
+//            HStack {
+                ForEach(reviewArray, id: \.id) { item in
+                    ReviewCell(review: item)
+//                        .frame(width: ., height: .infinity)
+                        .onTapGesture {
+                            withAnimation {
+                                print("Need to open full review")
+                            }
+//                        }
+                }
+                    Spacer()
+            }
+        }
     }
 }
-
-#Preview {
-    ReviewView()
-}
+    
+    #Preview {
+        ReviewView(reviewArray: [
+            Review(id: 3, userName: "Петр П.", date: "2 февраля 2024", rating: 5, text: "Замечательная молодая, но быстрорастущая компания."),
+            Review(id: 2, userName: "Юрий Ю.", date: "1 марта 2023", rating: 5, text: "Замечательная молодая, но быстрорастущая компания."),
+            Review(id: 1, userName: "Иван И.", date: "9 июня 2022", rating: 4, text: "Замечательная молодая, но быстрорастущая компания.")
+        ])
+    }

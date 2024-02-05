@@ -26,8 +26,8 @@ struct AddToCartSectionView: View {
                     .foregroundColor(whatIsSelected == "pices" ? .white : .gray)
                     .frame(height: 20)
                     .overlay(Text("Шт")
+                        .font(.system(size: 20).weight(.bold))
                         .foregroundColor(Color.black)
-                        .bold()
                     )
                     .onTapGesture {
                         withAnimation {
@@ -40,8 +40,9 @@ struct AddToCartSectionView: View {
                     .foregroundColor(whatIsSelected == "kilograms" ? .white : .gray)
                     .frame(height: 20)
                     .overlay(Text("Кг")
+                        .font(.system(size: 20).weight(.bold))
                         .foregroundColor(Color.black)
-                        .bold()
+
                     )
                     .onTapGesture {
                         withAnimation {
@@ -92,12 +93,11 @@ struct AddToCartSectionView: View {
                         }, label: {
                             VStack {
                                 Text("\(String(format: "%.0f", count)) \(whatIsSelected == "pices" ? "Шт" : "Кг")")
-                                    .font(.system(size: 20))
-                                    .bold()
+                                    .font(.system(size: 20).weight(.bold))
                                     .foregroundColor(.white)
+                                
                                 Text("\(String(format: "%.2f", totalPrice)) Руб")
-                                    .font(.system(size: 20))
-                                    
+                                    .font(.system(size: 13))
                                     .foregroundColor(.white)
                             }
                         })
