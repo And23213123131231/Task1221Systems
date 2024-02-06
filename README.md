@@ -8,4 +8,5 @@
 6. Код выложить на github.com.
 
 Пример результата:
+
 <img width="194" alt="Снимок экрана 2024-02-06 в 14 31 58" src="https://github.com/konstantingolovnya/Task1221Systems/assets/157446900/2a629a71-e3d5-4eb4-8822-bdab5abea0a8">
