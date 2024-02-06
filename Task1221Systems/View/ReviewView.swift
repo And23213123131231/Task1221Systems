@@ -11,6 +11,8 @@ struct ReviewView: View {
     
     let reviewArray: [Review]
     
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         
         ScrollView(.vertical) {
@@ -24,6 +26,12 @@ struct ReviewView: View {
                     Spacer()
             }
         }
+        .navigationBarBackButtonHidden()
+        .navigationBarItems(leading: Button(action: {
+            self.presentationMode.wrappedValue.dismiss()
+        }, label: {
+            Image(systemName: "arrow.backward")
+        }))
     }
 }
     

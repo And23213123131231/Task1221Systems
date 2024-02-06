@@ -129,6 +129,8 @@ struct ProductView: View {
                 }
                 .padding(.horizontal)
                 
+                Divider()
+                
                 AddToCartSectionView(discountedPrice: discountedPrice, originalPrice: content.product.price)
             }
         }
@@ -138,7 +140,6 @@ struct ProductView: View {
         }, label: {
             Image(systemName: "arrow.backward")
         }))
-        
         
         .toolbar(content: {
             ToolbarItem(placement: .topBarTrailing) {
