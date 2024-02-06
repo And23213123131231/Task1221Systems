@@ -39,5 +39,5 @@ struct ReviewCell: View {
 }
 
 #Preview {
-    ReviewCell(review: Review(id: 1, userName: "Иван И.", date: "9 июня 2022", rating: 4, text: "Замечательная молодая, но быстрорастущая компания."))
+    ReviewCell(review: Product.data()[0].reviewArray[0])
 }

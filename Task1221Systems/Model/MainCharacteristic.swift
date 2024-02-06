@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct MainCharacteristic: Identifiable {
+struct MainCharacteristic: Identifiable, Decodable {
     
     var id: String {
         return characteristic

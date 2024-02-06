@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct MainTabBar: View {
+        
+    @EnvironmentObject var viewModel: CatalogViewModel
+    
     var body: some View {
     
         TabView {
@@ -21,7 +24,8 @@ struct MainTabBar: View {
                 }
             
             NavigationView {
-                MainView()
+                CatalogMainView()
+                //
             }
                 .tabItem {
                     VStack {

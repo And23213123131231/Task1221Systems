@@ -8,12 +8,8 @@
 import SwiftUI
 
 struct ProductView: View {
-        
-    let content = Product()
-    
-    private var discountedPrice: Double {
-        content.priceWithDiscount(discount: content.product.discountPercent)
-    }
+            
+    let product: Product
                 
     @Environment(\.presentationMode) var presentationMode
     
@@ -23,7 +19,7 @@ struct ProductView: View {
                 .ignoresSafeArea()
             ScrollView(.vertical) {
                 HStack {
-                    if content.product.discountPercent > 0 {
+                    if product.discount > 0 {
                         Text("Цена по карте")
                             .padding(.all, 3)
                             .background(Color(.green))
@@ -43,32 +39,32 @@ struct ProductView: View {
                 HStack {
                     
                     NavigationLink {
-                        ReviewView(reviewArray: content.product.reviewArray)
+                        ReviewView(reviewArray: product.reviewArray)
                     } label: {
                         HStack {
                             Image(systemName: "star.fill")
                                 .foregroundColor(.yellow)
-                            Text("\(content.rating())")
+                            Text("\(product.rating())")
                                 .foregroundColor(.black)
-                            Text("| \(content.reviewCount()) \(content.wordDeclension())")
+                            Text("| \(product.reviewArray.count) \(product.wordDeclension())")
                                 .foregroundColor(.gray)
                         }
                     }
                     
                     Spacer()
                     
-                    if content.product.discountPercent > 0 {
+                    if product.discount > 0 {
                         Image(systemName: "seal.fill")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .foregroundColor(.red)
                             .frame(height: 50)
-                            .overlay(Text("-\(content.product.discountPercent)%"))
+                            .overlay(Text("-\(product.discount)%"))
                     }
                 }
                 
                 HStack {
-                    Text(content.product.title)
+                    Text(product.title)
                         .font(.system(size: 50).weight(.bold))
                         .multilineTextAlignment(.leading)
                     
@@ -77,12 +73,12 @@ struct ProductView: View {
                 }
                 HStack {
                     HStack {
-                        Image(content.product.prodictionPlaceFlag)
+                        Image(product.prodictionPlaceFlag)
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(height: 30)
                             .clipShape(Circle())
-                        Text(content.product.productionPlace)
+                        Text(product.productionPlace)
                             .font(.system(size: 15))
                     }
                     
@@ -99,7 +95,7 @@ struct ProductView: View {
                 }
                 .padding(.vertical, 10)
                 
-                Text(content.product.description)
+                Text(product.description)
                     .font(.system(size: 15))
                 
                 HStack {
@@ -109,10 +105,10 @@ struct ProductView: View {
                 }
                 .padding(.vertical, 10)
                 
-                CharacteristicsView(charactiristics: content.product.mainCharacteristicArray)
+                CharacteristicsView(product: product)
                     .padding(.bottom)
                 
-                ReviewsSectionView(count: content.reviewCount(), reviewArray: content.product.reviewArray)
+                ReviewsSectionView(reviewArray: product.reviewArray)
                 
                 Button {
                     print("writeReview pressed")
@@ -131,7 +127,7 @@ struct ProductView: View {
                 
                 Divider()
                 
-                AddToCartSectionView(discountedPrice: discountedPrice, originalPrice: content.product.price)
+                AddToCartSectionView(product: product)
             }
         }
         .navigationBarBackButtonHidden()
@@ -177,5 +173,5 @@ struct ProductView: View {
 
 
 #Preview {
-    ProductView()
+    ProductView(product: Product.data()[0])
 }

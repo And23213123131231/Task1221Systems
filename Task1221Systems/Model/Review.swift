@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Review {
+struct Review: Decodable {
     let id: Int
     let userName: String
     let date: String

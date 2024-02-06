@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ReviewsSectionView: View {
         
-    let count: Int
     let reviewArray: [Review]
     
     var body: some View {
@@ -22,7 +21,7 @@ struct ReviewsSectionView: View {
             NavigationLink {
                 ReviewView(reviewArray: reviewArray)
             } label: {
-                Text("Все \(count)")
+                Text("Все \(reviewArray.count)")
                     .font(.system(size: 20).weight(.bold))
                     .foregroundColor(.green)
                     .bold()
@@ -46,9 +45,5 @@ struct ReviewsSectionView: View {
 }
 
 #Preview {
-    ReviewsSectionView(count: 3, reviewArray: [
-        Review(id: 3, userName: "Петр П.", date: "2 февраля 2024", rating: 5, text: "Замечательная молодая, но быстрорастущая компания."),
-        Review(id: 2, userName: "Юрий Ю.", date: "1 марта 2023", rating: 5, text: "Замечательная молодая, но быстрорастущая компания."),
-        Review(id: 1, userName: "Иван И.", date: "9 июня 2022", rating: 4, text: "Замечательная молодая, но быстрорастущая компания.")
-    ])
+    ReviewsSectionView(reviewArray: Product.data()[0].reviewArray)
 }

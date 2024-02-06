@@ -9,15 +9,10 @@ import SwiftUI
 
 struct AddToCartSectionView: View {
     
-    let discountedPrice: Double
-    let originalPrice: Double
+    let product: Product
     
     @State private var whatIsSelected = "pices"
     @State private var count = 1.0
-    var totalPrice: Double {
-        return discountedPrice * count
-    }
-    
     
     var body: some View {
         VStack {
@@ -61,11 +56,11 @@ struct AddToCartSectionView: View {
         
         HStack {
             VStack(alignment: .leading, content: {
-                Text("\(String(format: "%.2f", discountedPrice)) Руб")
+                Text("\(String(format: "%.2f", (whatIsSelected == "pices" ? product.discountedPricePerPices() : product.discountedPricePerWeight()))) Руб")
                     .font(.system(size: 30))
                     .bold()
-                if discountedPrice != originalPrice {
-                    Text("\(String(format: "%.2f", originalPrice)) Руб")
+                if product.discountedPricePerWeight() != product.pricePerWeight {
+                    Text("\(String(format: "%.2f", (whatIsSelected == "pices" ? product.pricePerPices : product.pricePerWeight))) Руб")
                         .strikethrough()
                 }
             })
@@ -92,14 +87,14 @@ struct AddToCartSectionView: View {
                         Spacer()
                         
                         Button(action: {
-                            
+                            print("Add to cart button pressed")
                         }, label: {
                             VStack {
                                 Text("\(String(format: "%.0f", count)) \(whatIsSelected == "pices" ? "Шт" : "Кг")")
                                     .font(.system(size: 20).weight(.bold))
                                     .foregroundColor(.white)
                                 
-                                Text("\(String(format: "%.2f", totalPrice)) Руб")
+                                Text("\(String(format: "%.2f", (whatIsSelected == "pices" ? product.discountedPricePerPices() * count : product.discountedPricePerWeight() * count))) Руб")
                                     .font(.system(size: 13))
                                     .foregroundColor(.white)
                             }
@@ -120,14 +115,13 @@ struct AddToCartSectionView: View {
 
                         
                     })
-            
         }
     }
 }
 
 
 #Preview {
-    AddToCartSectionView(discountedPrice: 100.0, originalPrice: 120.0)
+    AddToCartSectionView(product: Product.data()[0])
 }
 
 

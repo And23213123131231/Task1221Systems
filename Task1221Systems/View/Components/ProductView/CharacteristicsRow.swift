@@ -23,5 +23,5 @@ struct CharacteristicsRow: View {
 }
 
 #Preview {
-    CharacteristicsRow(charactiristics: MainCharacteristic(characteristic: "Главный офис", value: "Россия, Нижний Новгород"))
+    CharacteristicsRow(charactiristics: Product.data()[0].mainCharacteristicArray[0])
 }
