@@ -31,7 +31,7 @@ struct ProductView: View {
                     Spacer()
                 }
                 
-                Image("logo")
+                Image(product.image)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(height: 200, alignment: .center)

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B57049C82B6B6A4C00919AD3 /* Task1221SystemsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57049C72B6B6A4C00919AD3 /* Task1221SystemsApp.swift */; };
+		B57049C82B6B6A4C00919AD3 /* Task1221Systems.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57049C72B6B6A4C00919AD3 /* Task1221Systems.swift */; };
 		B57049CA2B6B6A4C00919AD3 /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57049C92B6B6A4C00919AD3 /* ProductView.swift */; };
 		B57049CC2B6B6A4E00919AD3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B57049CB2B6B6A4E00919AD3 /* Assets.xcassets */; };
 		B57049CF2B6B6A4E00919AD3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B57049CE2B6B6A4E00919AD3 /* Preview Assets.xcassets */; };
@@ -27,7 +27,7 @@
 
 /* Begin PBXFileReference section */
 		B57049C42B6B6A4C00919AD3 /* Task1221Systems.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Task1221Systems.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B57049C72B6B6A4C00919AD3 /* Task1221SystemsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task1221SystemsApp.swift; sourceTree = "<group>"; };
+		B57049C72B6B6A4C00919AD3 /* Task1221Systems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task1221Systems.swift; sourceTree = "<group>"; };
 		B57049C92B6B6A4C00919AD3 /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
 		B57049CB2B6B6A4E00919AD3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B57049CE2B6B6A4E00919AD3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -75,7 +75,7 @@
 		B57049C62B6B6A4C00919AD3 /* Task1221Systems */ = {
 			isa = PBXGroup;
 			children = (
-				B57049C72B6B6A4C00919AD3 /* Task1221SystemsApp.swift */,
+				B57049C72B6B6A4C00919AD3 /* Task1221Systems.swift */,
 				B5E95C2A2B71BC7A0013B588 /* ViewModel */,
 				B5E95C042B6C8E710013B588 /* View */,
 				B5E95C052B6C8E860013B588 /* Model */,
@@ -216,7 +216,7 @@
 				B57049D82B6B713600919AD3 /* Review.swift in Sources */,
 				B57049CA2B6B6A4C00919AD3 /* ProductView.swift in Sources */,
 				B5E95C0C2B6CA0B90013B588 /* ReviewsSectionView.swift in Sources */,
-				B57049C82B6B6A4C00919AD3 /* Task1221SystemsApp.swift in Sources */,
+				B57049C82B6B6A4C00919AD3 /* Task1221Systems.swift in Sources */,
 				B5E95C272B6F46740013B588 /* ReviewView.swift in Sources */,
 				B5E95C1B2B6E0C080013B588 /* CharacteristicsRow.swift in Sources */,
 				B5E95C2E2B71C0DA0013B588 /* CatalogViewModel.swift in Sources */,

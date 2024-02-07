@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct Task1221SystemsApp: App {
+struct Task1221Systems: App {
     var body: some Scene {
         WindowGroup {
             MainTabBar()

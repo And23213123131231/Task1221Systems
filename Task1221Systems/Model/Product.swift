@@ -82,25 +82,35 @@ struct Product: Identifiable, Hashable {
     }
     
     static func data() -> [Product] {
-        [Product(id: 1, title: "1221 systems", image: "logo", discount: 7, productionPlace: "Россия, Нижний Новгород", prodictionPlaceFlag: "russianFlag", description: "1221Systems – аккредитованная IT-компания, которая специализируется на разработке IT-решений для бизнеса розничной и оптовой торговли. Наша компания выполняет разработку IT-продуктов группы компаний \"Сладкая жизнь\" – одного из крупнейших дистрибьюторов продуктов питания в России.", pricePerWeight: 100, pricePerPices: 130, mainCharacteristicArray: [
-            MainCharacteristic(characteristic: "Главный офис", value: "Россия, Нижний Новгород"),
-            MainCharacteristic(characteristic: "Активные проекты", value: "13 шт"),
-            MainCharacteristic(characteristic: "Количество сотрудников", value: "100 человек"),
-            MainCharacteristic(characteristic: "email", value: "1221@1221systems.ru"),
+        [Product(id: 2, title: "Яблоко Ред Чиф", image: "apple", discount: 5, productionPlace: "Россия, Кабардино-Балкарская Республика", prodictionPlaceFlag: "russianFlag", description: "Плоды массой 180 – 380 гр., имеют коническую, поднимающуюся кверху форму. Кожица ярко — красного цвета с преобладанием воскового налета. Мякоть кремового оттенка, ароматная, очень сочная и сладкая.", pricePerWeight: 100, pricePerPices: 30, mainCharacteristicArray: [
+            MainCharacteristic(characteristic: "Энергия, ккал", value: "46"),
+            MainCharacteristic(characteristic: "Жиры, г", value: "1.6"),
+            MainCharacteristic(characteristic: "Углеводы, г", value: "9.8"),
+            MainCharacteristic(characteristic: "Белки, г", value: "0.4"),
         ], reviewArray: [
-            Review(id: 3, userName: "Петр П.", date: "2 февраля 2024", rating: 5, text: "Замечательная молодая, но быстрорастущая компания."),
-            Review(id: 2, userName: "Юрий Ю.", date: "1 марта 2023", rating: 3, text: "Замечательная молодая, но быстрорастущая компания."),
-            Review(id: 1, userName: "Иван И.", date: "9 июня 2022", rating: 4, text: "Замечательная молодая, но быстрорастущая компания.")
+            Review(id: 3, userName: "Петр П.", date: "2 февраля 2024", rating: 5, text: "Замечательный товар. Хочу всегда его покупать."),
+            Review(id: 2, userName: "Юрий Ю.", date: "1 марта 2023", rating: 3, text: "Замечательный товар. Хочу всегда его покупать."),
+            Review(id: 1, userName: "Иван И.", date: "9 июня 2022", rating: 4, text: "Замечательный товар. Хочу всегда его покупать.")
         ]),
-         Product(id: 1, title: "1221 systems", image: "logo", discount: 7, productionPlace: "Россия, Нижний Новгород", prodictionPlaceFlag: "russianFlag", description: "1221Systems – аккредитованная IT-компания, которая специализируется на разработке IT-решений для бизнеса розничной и оптовой торговли. Наша компания выполняет разработку IT-продуктов группы компаний \"Сладкая жизнь\" – одного из крупнейших дистрибьюторов продуктов питания в России.", pricePerWeight: 100, pricePerPices: 130, mainCharacteristicArray: [
-             MainCharacteristic(characteristic: "Главный офис", value: "Россия, Нижний Новгород"),
-             MainCharacteristic(characteristic: "Активные проекты", value: "13 шт"),
-             MainCharacteristic(characteristic: "Количество сотрудников", value: "100 человек"),
-             MainCharacteristic(characteristic: "email", value: "1221@1221systems.ru"),
+         Product(id: 1, title: "Лайм", image: "lime", discount: 10, productionPlace: "Россия, Кабардино-Балкарская Республика", prodictionPlaceFlag: "russianFlag", description: "Плоды массой 180 – 380 гр., имеют коническую, поднимающуюся кверху форму. Кожица ярко — красного цвета с преобладанием воскового налета. Мякоть кремового оттенка, ароматная, очень сочная и сладкая.", pricePerWeight: 100, pricePerPices: 30, mainCharacteristicArray: [
+             MainCharacteristic(characteristic: "Энергия, ккал", value: "46"),
+             MainCharacteristic(characteristic: "Жиры, г", value: "1.6"),
+             MainCharacteristic(characteristic: "Углеводы, г", value: "9.8"),
+             MainCharacteristic(characteristic: "Белки, г", value: "0.4"),
          ], reviewArray: [
-             Review(id: 3, userName: "Петр П.", date: "2 февраля 2024", rating: 5, text: "Замечательная молодая, но быстрорастущая компания."),
-             Review(id: 2, userName: "Юрий Ю.", date: "1 марта 2023", rating: 3, text: "Замечательная молодая, но быстрорастущая компания."),
-             Review(id: 1, userName: "Иван И.", date: "9 июня 2022", rating: 4, text: "Замечательная молодая, но быстрорастущая компания.")
+             Review(id: 3, userName: "Петр П.", date: "2 февраля 2024", rating: 5, text: "Замечательный товар. Хочу всегда его покупать."),
+             Review(id: 2, userName: "Юрий Ю.", date: "1 марта 2023", rating: 3, text: "Замечательный товар. Хочу всегда его покупать."),
+             Review(id: 1, userName: "Иван И.", date: "9 июня 2022", rating: 4, text: "Замечательный товар. Хочу всегда его покупать.")
+         ]),
+         Product(id: 3, title: "Помидор Черри", image: "tomato", discount: 0, productionPlace: "Россия, Кабардино-Балкарская Республика", prodictionPlaceFlag: "russianFlag", description: "Плоды массой 180 – 380 гр., имеют коническую, поднимающуюся кверху форму. Кожица ярко — красного цвета с преобладанием воскового налета. Мякоть кремового оттенка, ароматная, очень сочная и сладкая.", pricePerWeight: 100, pricePerPices: 30, mainCharacteristicArray: [
+             MainCharacteristic(characteristic: "Энергия, ккал", value: "46"),
+             MainCharacteristic(characteristic: "Жиры, г", value: "1.6"),
+             MainCharacteristic(characteristic: "Углеводы, г", value: "9.8"),
+             MainCharacteristic(characteristic: "Белки, г", value: "0.4"),
+         ], reviewArray: [
+             Review(id: 3, userName: "Петр П.", date: "2 февраля 2024", rating: 5, text: "Замечательный товар. Хочу всегда его покупать."),
+             Review(id: 2, userName: "Юрий Ю.", date: "1 марта 2023", rating: 3, text: "Замечательный товар. Хочу всегда его покупать."),
+             Review(id: 1, userName: "Иван И.", date: "9 июня 2022", rating: 4, text: "Замечательный товар. Хочу всегда его покупать.")
          ])]
     }
     
